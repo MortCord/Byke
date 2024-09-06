@@ -1,0 +1,20 @@
+.prod-card img{
+    max-width: 193px;
+    max-height: 193px;
+}
+
+.prod-card{
+    max-width: 236px;
+    max-height: 368px;
+    background: #fff;
+    margin-top: 39px;
+    margin-bottom: 39px;
+    padding-bottom: 34px;
+}
+
+.prod-card-price{
+    background: #FFF4C7;
+    min-width: 123px;
+    min-height: 45px;
+    text-align: center;
+}

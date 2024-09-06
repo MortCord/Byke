@@ -1,0 +1,9 @@
+@import url(./components/_header.css);
+@import url(./components/_mainPage.css);
+@import url(./components/_slider.css);
+@import url(./components/_prodCard.css);
+@import url(./components/_footer.css);
+
+body{
+    background: #979696;
+}

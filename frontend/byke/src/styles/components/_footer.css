@@ -1,0 +1,44 @@
+footer{
+    margin-top: 110px;
+    background: #DEDCDC;
+    min-width: 100%;
+    min-height: 368px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer a{
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+footer a:hover{
+    color: #6005d7;
+}
+
+.ft1{
+    width: 35%;
+}
+
+.ft2{
+    width: 55%;
+}
+
+footer img{
+    max-width: 170px;
+    max-height: 66px;
+}
+
+footer input{
+    min-width: 808px;
+    min-height: 50px;
+    background: none;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+footer span{
+    font-size: 20px;
+}
