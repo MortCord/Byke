@@ -6,7 +6,7 @@ import cart from "../img/Cart.png";
 const Header = () =>(
     <header className="d-flex justify-content-around">
         <div className="hd1 d-flex align-items-center justify-content-around">
-            <img src={logo} alt="logo" />
+            <Link to="/"><img src={logo} alt="logo" /></Link>
             <input type="text" placeholder="Find a product..." />
         </div>
         <div className="hd2 d-flex align-items-center justify-content-around">
@@ -15,7 +15,7 @@ const Header = () =>(
         </div>
         <div className="hd3 d-flex align-items-center justify-content-around">
             <img src={cart} alt="cart" />
-            <Link to="/">Log in</Link>
+            <Link to="/login">Log in</Link>
         </div>
     </header>
 );

@@ -3,6 +3,8 @@
 @import url(./components/_slider.css);
 @import url(./components/_prodCard.css);
 @import url(./components/_footer.css);
+@import url(./components/_logIn.css);
+@import url(./components/_register.css);
 
 body{
     background: #979696;
