@@ -17,4 +17,9 @@
     min-width: 123px;
     min-height: 45px;
     text-align: center;
+    font-size: 20px;
+}
+
+.prod-card span{
+    font-size: 20px;
 }

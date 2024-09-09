@@ -10,7 +10,7 @@ const Footer = ()=>(
             <div className="ft1 d-flex align-items-center"><img src={logo} alt="logo" /></div>
             <div className="ft2 d-flex justify-content-around">
                 <div>
-                    <h4>Catalog</h4>
+                    <Link to="/shop"><h4>Catalog</h4></Link>
                     <div className="d-flex flex-column">
                         <Link to="/">Forks</Link>
                         <Link to="/">Connecting rod star</Link>

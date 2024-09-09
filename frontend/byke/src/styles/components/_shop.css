@@ -1,0 +1,78 @@
+.shop{
+    margin-top: 50px;
+}
+
+.shop-nav-main{
+    background: #B4B4B4;
+    width: 20%;
+    min-height: 735px;
+}
+
+.shop-nav-main a{
+    text-decoration: none;
+    color: #000;
+    font-size: 24px;
+    transition: color 0.2s;
+}
+
+.shop-nav-main a:hover{
+    color: #6005d7;
+}
+
+.shop-nav{
+    gap: 15px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.shop-form{
+    gap: 24px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+
+.shop-form span{
+    font-size: 24px;
+}
+
+.shop-form input{
+    max-width: 93px;
+    min-height: 34px;
+    border-radius: 5px;
+    background: none;
+    border: 1px solid #000;
+    font-size: 20px;
+
+}
+
+.shop-form button{
+    max-width: 93px;
+    min-height: 34px;
+    background: #000;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.shop-form button:hover{
+    background: #cecece;
+    color: #000;
+}
+
+.shop-form-field{
+    gap: 50px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    width: 75%; 
+}
+
+.products .prod-card-shop {
+    flex-basis: calc(25% - 20px); 
+    box-sizing: border-box; 
+}

@@ -26,6 +26,12 @@
     color: #fff;
     border: none;
     font-size: 24px;
+    transition: background-color 0.2s;
+}
+
+.reg button:hover{
+    background: #cecece;
+    color: #000;
 }
 
 .reg-sect{

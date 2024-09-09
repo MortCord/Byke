@@ -5,6 +5,7 @@
 @import url(./components/_footer.css);
 @import url(./components/_logIn.css);
 @import url(./components/_register.css);
+@import url(./components/_shop.css);
 
 body{
     background: #979696;

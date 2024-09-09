@@ -37,6 +37,7 @@ footer input{
     background: none;
     font-size: 20px;
     padding-left: 10px;
+    border: 1px solid #000;
 }
 
 footer span{

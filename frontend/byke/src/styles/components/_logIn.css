@@ -26,6 +26,12 @@
     color: #fff;
     border: none;
     font-size: 24px;
+    transition: background-color 0.2s;
+}
+
+.logIn button:hover{
+    background: #cecece;
+    color: #000;
 }
 
 .log-sect{
