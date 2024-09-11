@@ -6,6 +6,9 @@
 @import url(./components/_logIn.css);
 @import url(./components/_register.css);
 @import url(./components/_shop.css);
+@import url(./components/_blog.css);
+@import url(./components/_prodPage.css);
+@import url(./components/_modalCart.css);
 
 body{
     background: #979696;

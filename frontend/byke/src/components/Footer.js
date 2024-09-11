@@ -24,7 +24,7 @@ const Footer = ()=>(
                     </div>
                 </div>
                 <div>
-                    <h4>Blog</h4>
+                    <Link to="/blog"><h4>Blog</h4></Link>
                     <div className="d-flex flex-column">
                         <Link to="/">Cyclist safety</Link>
                         <Link to="/">Children's bicycles</Link>

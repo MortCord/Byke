@@ -1,8 +1,9 @@
 import React from "react";
 import prod from "../img/testProd.png";
+import { Link } from "react-router-dom";
 
 const ProdCard =(props)=>(
-    <div className="prod-card">
+    <Link className="prod-card-link" to="/prod"><div className="prod-card">
         <img src={prod} alt="product" />
         <span>{props.name}</span>
         <div className="d-flex justify-content-center">
@@ -11,6 +12,7 @@ const ProdCard =(props)=>(
         </div>
         </div>
     </div>
+    </Link>
 );
 
 export default ProdCard;

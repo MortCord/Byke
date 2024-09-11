@@ -29,3 +29,13 @@ header a:hover{
 .hd2, .hd3{
     min-width: 15%;
 }
+
+.header-cart{
+    background: none;
+    border: none;
+}
+
+.header-cart:hover{
+    background: none;
+    border: none;
+}

@@ -1,0 +1,65 @@
+.prod-page{
+    margin-top: 110px;
+}
+
+.price-sect{
+    background: #D9D9D9;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    gap: 134px;
+    padding-left: 5px;
+}
+
+.price-sect span{
+    font-size: 32px;
+}
+
+.price-sect input{
+    min-width: 93px;
+    min-height: 29px;
+    font-size: 20px;
+    text-align: center;
+    background: none;
+    border: 1px solid #000;
+}
+
+.price-sect button{
+    background: #000;
+    border: none;
+    border-radius: 5px;
+    min-width: 154px;
+    min-height: 37px;
+    font-size: 20px;
+    color: #fff;
+    transition: background-color 0.2s;
+    margin-left: 20px;
+}
+
+.price-sect button:hover{
+    background: #cecece;
+    color: #000;
+}
+
+.avail{
+    color: #AEFF78;
+    font-size: 20px;
+}
+
+.notavail{
+    color: #FF0909;
+    font-size: 20px;
+}
+
+.favorite{
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.prod-page-optio{
+    gap: 36px;
+}
+
+.prod-page-main-sect{
+    width: 50%;
+}

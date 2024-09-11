@@ -1,0 +1,45 @@
+.blog{
+    margin-top: 50px;
+    padding-right: 30px;
+}
+
+.blog-nav{
+    background: #B4B4B4;
+    min-width: 25%;
+    min-height: 401px;
+    font-size: 24px;
+    gap: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+}
+
+.blog a:hover{
+    color: #6005d7;
+}
+
+.blog a{
+    text-decoration: none;
+    color: #000;
+    transition: color 0.2s;
+}
+
+.blog p{
+    font-size: 20px;
+}
+
+.blog-info a{
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.blog-info{
+    border: 1px solid #000;
+    width: 40%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.blog-info-text{
+    gap: 20px;
+    width: 70%;
+}
