@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import prod from "../img/prodPageTest.png";
 import plus from "../img/plus.png";
 import { useState } from "react";
@@ -9,6 +9,12 @@ import heart from "../img/heart.png";
 const ProdPage = () =>{
 
     const [amount,setAmount] = useState(1);
+
+    useEffect(() =>{
+        if(amount <= 0){
+            setAmount(1);
+        }
+    },[amount]);
 
     return(
         <div className="prod-page d-flex justify-content-around">

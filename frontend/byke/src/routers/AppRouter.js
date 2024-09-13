@@ -8,6 +8,7 @@ import Register from "../components/Register";
 import Shop from "../components/Shop";
 import Blog from "../components/Blog";
 import ProdPage from "../components/ProdPage";
+import Article from "../components/Article";
 
 const AppRouter = () =>(
     <BrowserRouter>
@@ -17,9 +18,10 @@ const AppRouter = () =>(
                 <Route path="/" component={MainPage} exact={true} />
                 <Route path="/login" component={LogIn} />
                 <Route path="/register" component={Register} />
-                <Route path="/shop" component={Shop} />
-                <Route path="/blog" component={Blog} />
-                <Route path="/prod" component={ProdPage} />
+                <Route path="/shop/:id" component={Shop} />
+                <Route path="/blog/:id" component={Blog} />
+                <Route path="/prod/:id" component={ProdPage} />
+                <Route path="/article/:id" component={Article} />
             </Switch>
             <Footer />
         </div>

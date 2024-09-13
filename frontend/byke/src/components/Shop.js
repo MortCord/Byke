@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ProdCard from "./ProdCard";
 
 const Shop = () =>{
 
-    const [priceFrom, setPriceFrom] = useState(0);
-    const [priceTo, setPriceTo] = useState(0);
+    const [priceFrom, setPriceFrom] = useState(10);
+    const [priceTo, setPriceTo] = useState(20);
+
+    useEffect(() =>{
+        if(priceFrom <= 0){
+            setPriceFrom(1);
+        }
+        if(priceTo <= 0){
+            setPriceTo(1);
+        }
+    },[priceFrom, priceTo]);
 
     return(
         <div className="shop d-flex justify-content-between">

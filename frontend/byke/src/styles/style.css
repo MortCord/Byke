@@ -9,6 +9,7 @@
 @import url(./components/_blog.css);
 @import url(./components/_prodPage.css);
 @import url(./components/_modalCart.css);
+@import url(./components/_article.css);
 
 body{
     background: #979696;

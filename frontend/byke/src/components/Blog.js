@@ -22,7 +22,7 @@ const Blog = () =>{
                 <div className="blog-info-text d-flex flex-column">
                     <h4>Cyclist safety</h4>
                     <p>A cyclist is a full-fledged participant in traffic and knowledge of traffic rules is an important component of his safety. To feel confident on the roads of the city and beyond, you need to follow the traffic rules for cyclists. According to the rules, you can drive on the roads when you are 14 years old.</p>
-                    <Link to="/">More➠</Link>
+                    <Link to="/article">More➠</Link>
                 </div>
             </div>
         </div>

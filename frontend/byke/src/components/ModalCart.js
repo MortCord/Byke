@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import testProd from '../img/testProd.png';
 
 function ModalCart({ show, handleClose }) {
 
     const [amount,setAmount] = useState(1);
+
+    useEffect(()=>{
+      if(amount <= 0){
+        setAmount(1);
+      }
+    },[amount]);
 
   return (
     <Modal className='cart-main' show={show} onHide={handleClose} size="lg" centered>
