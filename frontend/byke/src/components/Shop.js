@@ -7,6 +7,8 @@ const Shop = () =>{
 
     const [priceFrom, setPriceFrom] = useState(10);
     const [priceTo, setPriceTo] = useState(20);
+    const [prod, setProd] = useState([]);
+    const [prodType, setProdType] = useState([]);
 
     useEffect(() =>{
         if(priceFrom <= 0){
@@ -17,20 +19,31 @@ const Shop = () =>{
         }
     },[priceFrom, priceTo]);
 
+    useEffect(() =>{
+        fetch("http://localhost:8080/prod/get")
+        .then((res) => res.json())
+        .then((result) =>{
+            console.log(result);
+            setProd(result);
+        });
+
+        fetch("http://localhost:8080/prodtype/get")
+        .then((res) => res.json())
+        .then((result) => {
+            console.log(result);
+            setProdType(result);
+        })
+    },[]);
+    
+
     return(
         <div className="shop d-flex justify-content-between">
             <div className="shop-nav-main">
                 <div className="d-flex flex-column shop-nav">
-                <Link to="/shop">All</Link>
-                <Link to="/shop">Forks</Link>
-                <Link to="/shop">Connecting rod star</Link>
-                <Link to="/shop">Bicycle cassete</Link>
-                <Link to="/shop">Pedals</Link>
-                <Link to="/shop">Switches</Link>
-                <Link to="/shop">Handlebars</Link>
-                <Link to="/shop">Saddles</Link>
-                <Link to="/shop">Helmets</Link>
-                <Link to="/shop">Glasses</Link>
+                <Link to="/shop/all">All</Link>
+                {prodType.map((productType) =>(
+                    <Link to={`/shop/${productType.id}`}>{productType.name}</Link>
+                ))}
                 </div>
                 <hr />
                 <form className="shop-form d-flex flex-column">
@@ -43,15 +56,9 @@ const Shop = () =>{
                 </form>
             </div>
             <div className="products d-flex justify-content-around">
-                <ProdCard className="prod-card-shop" name={"Spare parts Rock Shox service kit Recon SA"} price={"17$"} />
-                <ProdCard className="prod-card-shop" name={"Spare parts Rock Shox service kit Recon SA"} price={"17$"} />
-                <ProdCard className="prod-card-shop" name={"Spare parts Rock Shox service kit Recon SA"} price={"17$"} />
-                <ProdCard className="prod-card-shop" name={"Spare parts Rock Shox service kit Recon SA"} price={"17$"} />
-                <ProdCard className="prod-card-shop" name={"Spare parts Rock Shox service kit Recon SA"} price={"17$"} />
-                <ProdCard className="prod-card-shop" name={"Spare parts Rock Shox service kit Recon SA"} price={"17$"} />
-                <ProdCard className="prod-card-shop" name={"Spare parts Rock Shox service kit Recon SA"} price={"17$"} />
-                <ProdCard className="prod-card-shop" name={"Spare parts Rock Shox service kit Recon SA"} price={"17$"} />
-                <ProdCard className="prod-card-shop" name={"Spare parts Rock Shox service kit Recon SA"} price={"17$"} />
+                {prod.map((product) => (
+                    <ProdCard name={product.name} price={product.price} />
+                ))}
             </div>
         </div>
     );

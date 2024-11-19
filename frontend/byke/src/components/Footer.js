@@ -1,38 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../img/Logo-big.png";
 import facebook from "../img/Facebook.png";
 import instagram from "../img/Instagram.png";
 
-const Footer = ()=>(
+const Footer = ()=>{
+
+    const [prodType, setProdType] = useState([]);
+    const [article, setArticle] = useState([]);
+
+    useEffect(()=>{
+        fetch("http://localhost:8080/prodtype/get")
+        .then((res) => res.json())
+        .then((result) =>{
+            console.log(result);
+            setProdType(result);
+            
+        });
+        fetch("http://localhost:8080/article/get")
+        .then((res) => res.json())
+        .then((result) =>{
+            setArticle(result);
+        });
+    },[]);
+
+    return(
     <footer>
         <div className="d-flex justify-content-around">
             <div className="ft1 d-flex align-items-center"><img src={logo} alt="logo" /></div>
             <div className="ft2 d-flex justify-content-around">
                 <div>
-                    <Link to="/shop"><h4>Catalog</h4></Link>
+                    <Link to="/shop/1"><h4>Catalog</h4></Link>
                     <div className="d-flex flex-column">
-                        <Link to="/">Forks</Link>
-                        <Link to="/">Connecting rod star</Link>
-                        <Link to="/">Bicycle cassete</Link>
-                        <Link to="/">Pedals</Link>
-                        <Link to="/">Switches</Link>
-                        <Link to="/">Handlebars</Link>
-                        <Link to="/">Saddles</Link>
-                        <Link to="/">Helmets</Link>
-                        <Link to="/">Glasses</Link>
+                        {prodType.map((productType) =>(
+                            <Link to={`/shop/${productType.id}`}>{productType.name}</Link>
+                        ))}
                     </div>
                 </div>
                 <div>
-                    <Link to="/blog"><h4>Blog</h4></Link>
+                    <Link to="/blog/1"><h4>Blog</h4></Link>
                     <div className="d-flex flex-column">
-                        <Link to="/">Cyclist safety</Link>
-                        <Link to="/">Children's bicycles</Link>
-                        <Link to="/">Famous cyclists</Link>
-                        <Link to="/">Interesting about cycling</Link>
-                        <Link to="/">Bike setup</Link>
-                        <Link to="/">Reviews</Link>
-                        <Link to="/">Technologies</Link>
+                            {article.map((artic) =>(
+                                <Link to={`/blog/${artic.id}`}>{artic.name}</Link>
+                            ))}
                     </div>
                 </div>
                 <div>
@@ -62,6 +72,7 @@ const Footer = ()=>(
             </div>
         </div>
     </footer>
-);
+    );
+};
 
 export default Footer;

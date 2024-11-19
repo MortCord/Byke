@@ -22,8 +22,8 @@ const Header = ({ location }) => {
       </div>
 
       <div className="hd2 d-flex align-items-center justify-content-around">
-        <Link to="/shop">Catalog</Link>
-        <Link to="/blog">Blog</Link>
+        <Link to="/shop/1">Catalog</Link>
+        <Link to="/blog/1">Blog</Link>
       </div>
 
       <div className="hd3 d-flex align-items-center justify-content-around">

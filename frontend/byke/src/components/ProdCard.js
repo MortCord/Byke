@@ -8,7 +8,7 @@ const ProdCard =(props)=>(
         <span>{props.name}</span>
         <div className="d-flex justify-content-center">
         <div className="prod-card-price d-flex justify-content-center mt-2">
-            <span>{props.price}</span>
+            <span>{`${props.price}$`}</span>
         </div>
         </div>
     </div>

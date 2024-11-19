@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+
 
 import Slider from "./Slider";
 
 
 const MainPage = () =>{
+
+
 
     return(
         <div>
