@@ -3,6 +3,8 @@ package com.byke.bykeShop.controller;
 import com.byke.bykeShop.model.Prod;
 import com.byke.bykeShop.service.Prod.ProdService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,5 +35,11 @@ public class ProdController {
     @PutMapping("/update/{id}")
     public Prod updateProd(@RequestBody Prod prod, @PathVariable int id) throws IllegalAccessException {
         return prodService.updateProd(id, prod);
+    }
+
+    @GetMapping("/images/{filename:.+}")
+    @ResponseBody
+    public ResponseEntity<Resource> serveFile(@PathVariable String filename){
+        return prodService.serveFile(filename);
     }
 }

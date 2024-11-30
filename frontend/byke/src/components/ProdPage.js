@@ -5,10 +5,37 @@ import { useState } from "react";
 import minus from "../img/minus.png";
 import checkmark from "../img/Checkmark.png";
 import heart from "../img/heart.png";
+import { withRouter } from "react-router-dom";
 
-const ProdPage = () =>{
+const ProdPage = ({match, history}) =>{
+
+    const renderFavorite = () => {
+        if (isAvail == 1) {
+            return (
+                <>
+                    <img src={checkmark} alt="checkmark" />
+                    <span className="avail">Available</span>
+                </>
+            );
+        }else{
+            return (
+                <>
+                    <span className="notavail">Not available</span>
+                </>
+            ); 
+        }
+        return null; // Ensure a return statement if the condition isn't met
+    };
+    
 
     const [amount,setAmount] = useState(1);
+    const { id } = match.params;
+    const [prodName, setProdName] = useState("");
+    const [prodBrand, setProdBrand] = useState("");
+    const [isAvail, setIsAvail] = useState(0);
+    const [prodPrice, setProdPrice] = useState(0);
+    const [prodPhoto, setProdPhoto] = useState("");
+
 
     useEffect(() =>{
         if(amount <= 0){
@@ -16,17 +43,36 @@ const ProdPage = () =>{
         }
     },[amount]);
 
+    useEffect(() => {
+        fetch("http://localhost:8080/prod/get")
+            .then(res => res.json())
+            .then((result) => {
+                console.log(result);
+                const prod = result.find(prod => prod.id === parseInt(id));
+                if (prod) {
+                    setProdName(prod.name);
+                    setProdBrand(prod.brand);
+                    setIsAvail(prod.isAvail);
+                    setProdPrice(prod.price);
+                    setProdPhoto(prod.photo);
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching product:", error);
+            });
+    }, [id]);
+
     return(
         <div className="prod-page d-flex justify-content-around">
-            <div><img src={prod} alt="product" /></div>
+            <div><img src={`http://localhost:8080/prod/images/${prodPhoto}`} alt="product" /></div>
             <div className="prod-page-main-sect">
-                <h1>Spare parts Rock Shox service kit Recon SA</h1>
+                <h1>{prodName}</h1>
                 <div className="prod-info mt-3">
-                    <h4>Brand: Rock Shox</h4>
-                    <h4>ID: 5</h4>
+                    <h4>{prodBrand}</h4>
+                    <h4>ID: {id}</h4>
                 </div>
                 <div className="price-sect mt-5 d-flex">
-                    <span>17$</span>
+                    <span>{prodPrice}$</span>
                     <div className="d-flex amount-sect">
                         <div>
                             <img src={plus} alt="plus" onClick={()=>setAmount(amount+1)} />
@@ -38,12 +84,12 @@ const ProdPage = () =>{
                 </div>
                 <div className="d-flex prod-page-optio mt-3">
                     <div>
-                        <img src={checkmark} alt="checkmark" />
-                        <span className="avail">Available</span>
+                        {renderFavorite()}
                     </div>
                     <div>
                         <img src={heart} alt="heart" />
                         <span className="favorite">Add to favorites</span>
+
                     </div>
                 </div>
                 <hr />
@@ -55,4 +101,4 @@ const ProdPage = () =>{
     );
 }
 
-export default ProdPage;
+export default withRouter(ProdPage);

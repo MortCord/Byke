@@ -33,7 +33,7 @@ export default function Slider() {
       {chunkedProd.map((chunk, index) => (
         <SwiperSlide key={index} className="d-flex justify-content-around">
           {chunk.map((product, idx) => (
-            <ProdCard key={idx} name={product.name} price={product.price} />
+            <ProdCard key={idx} name={product.name} price={product.price} id={product.id} photo={product.photo} />
           ))}
         </SwiperSlide>
       ))}

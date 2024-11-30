@@ -22,7 +22,7 @@ const Header = ({ location }) => {
       </div>
 
       <div className="hd2 d-flex align-items-center justify-content-around">
-        <Link to="/shop/1">Catalog</Link>
+        <Link to="/shop/all">Catalog</Link>
         <Link to="/blog/1">Blog</Link>
       </div>
 

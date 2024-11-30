@@ -63,3 +63,8 @@
 .prod-page-main-sect{
     width: 50%;
 }
+
+.prod-page img{
+    max-width: 296px;
+    max-height: 288px;
+}

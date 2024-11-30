@@ -9,6 +9,7 @@ import Shop from "../components/Shop";
 import Blog from "../components/Blog";
 import ProdPage from "../components/ProdPage";
 import Article from "../components/Article";
+import page404 from "../components/page404";
 
 const AppRouter = () =>(
     <BrowserRouter>
@@ -22,6 +23,7 @@ const AppRouter = () =>(
                 <Route path="/blog/:id" component={Blog} />
                 <Route path="/prod/:id" component={ProdPage} />
                 <Route path="/article/:id" component={Article} />
+                <Route component={page404} />
             </Switch>
             <Footer />
         </div>

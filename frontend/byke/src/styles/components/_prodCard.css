@@ -5,11 +5,13 @@
 
 .prod-card{
     max-width: 236px;
-    max-height: 368px;
     background: #fff;
     margin-top: 39px;
     margin-bottom: 39px;
     padding-bottom: 34px;
+    padding-top: 34px;
+    gap: 40px;
+    text-align: center;
 }
 
 .prod-card-price{
