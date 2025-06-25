@@ -5,3 +5,8 @@
 .article h2{
     margin-left: 30px;
 }
+
+.art-body img{
+    max-width: 500px;
+    max-height: 290px;
+}

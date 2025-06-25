@@ -26,7 +26,7 @@ const Article = ({match}) =>{
     return(
         <div className="article mt-5">
             <h2>{name}</h2>
-            <div className="mt-3 d-flex justify-content-around">
+            <div className="mt-3 d-flex justify-content-around art-body">
                 <div>
                     <img src={`http://localhost:8080/prod/images/${photo}`} alt="Article" />
                 </div>
